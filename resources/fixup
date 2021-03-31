@@ -1,0 +1,13 @@
+#!/bin/sh
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PKGS=$(cat /resources/packages | grep -v ^# | xargs)
+
+apk add $PKGS
+
+echo "root:root" | chpasswd
+
+echo "alpine" > /etc/hostname
+
+cp -rT /resources/etc/ /etc/
+cp -rT /resources/usr/ /usr/

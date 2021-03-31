@@ -1,0 +1,6 @@
+# List of packaes will install in the debootstrap chroot environment.
+# A line start with # is comment. Separate packages name with new-line or space.
+
+openrc
+busybox-suid
+lighttpd
